@@ -41,11 +41,28 @@ Dataset ini berisi informasi terkait nama dan tipe ruangan yang disewakan, geogr
  * number_of_reviews_ltm: Jumlah ulasan yang dimiliki oleh properti tersebut (dalam 12 bulan terakhir).
 
 
-# 2. Pemahaman Data dan Cleaning
+# 2. Pemahaman Data dan Cleaning (detail dapat dilihat pada file jupiter notebook - Capstone Module 2.ipynb)
 Sebelum masuk ke dalam analisis, kita perlu mengenal dataset kita lebih jauh dalam tahapan *data understanding*. Dari proses ini, kita akan tahu anomali-anomali apa saja yang terdapat di dalam dataset kita dan perlu ditangani dalam tahapan *data cleaning*. Setiap penangan anomali yang dilakukan, akan disertai dengan justifikasi langkah yang diambil, baik secara *domain knowledge* maupun secara statistik.
 
 # 3. Analisis (detail dapat dilihat pada file jupiter notebook - Capstone Module 2.ipynb)
 
-# 4. Kesimpulan (detail dapat dilihat pada file jupiter notebook - Capstone Module 2.ipynb)
+# 4. Kesimpulan (detail dapat dilihat pada file jupiter notebook
+Berdasarkan hasil analisa diatas dapat disimpulkan terdapat beberapa permasalahan yang dapat menjadi faktor-faktor kurangnya kenyamanan atau kepuasan pengalaman calon penyewa properti di AirBnB.
+1. Nama properti memiliki beberapa permasalahan seperti: properti tidak memiliki nama sama sekali dan nama sulit dipahami.
+2. Terdapat banyak properti dalam aplikasi yang memiliki nama yang sama dengan lokasi, nama pemiliki, tipe ruangan dan harga yang sama.
+3. Harga properti yang tidak masuk akal terutama overprice pada 'Privat room' yang notabennya adalah berbagi bangunan dengan pemilik.
+4. Terdapat properti yang hanya disewakan dalam jangka waktu yang panjang.
+5. Terdapat properti yang tidak disewakan sama sekali sepanjang tahun.
+6. Terdapat ulasan pada properti yang tidak disewakan.
+7. Permasalahan terdapat paling banyak pada tipe ruangan “Entire Home/Apt” dan “Private Room”.
 
-# 5. Rekomendasi (detail dapat dilihat pada file jupiter notebook - Capstone Module 2.ipynb)
+# 5. Rekomendasi
+Permasalahan-permasalahan yang ditemukan dalam aplikasi AirBnB di Bangkok dapat ditangani agar dapat meningkatkan kepuasan pengguna aplikasi. Beberapa hal yang dapat diperbaiki adalah sebagai berikut:
+- Kolom **Nama** pada formular pendaftaran properti untuk pertama kalinya harus diisi denngan beberapa syarat sebagai berikut: Nama harus memiliki minimal karakter (e.g. 5); Nama harus diisi dengan nama yang belum pernah didaftarkan sebelumnya (unique nama)'; Nama harus menggunakan Karakter Alfabet-Latin dan angka.
+- Ketersediaan (availability days) untuk disewa tidak bisa 0 hari dalam setahun, (direkomendasikan untuk menetapkan minimal hari yang tersedia agar properti dapat didaftarkan).
+- Minimal hari (Minimum stay) yang harus disewa oleh calon penyewa tidak tidak boleh lebih dari 1 bulan, karena AirBnB adalah penyewaan properti jangka pendek.
+- Menghindari Duplikasi dengan cara mengharuskan unique name, menghindari properti disewakan 2 kali karena ada 2 properti terdaftar untuk 1 properti yang sama (duplicate)
+- Melakukan pengecekan lebih mendalam menerima pengajuan listing, apakah sudah memenuhi standar atau tidak
+- Memberikan reward kepada user yang memberikan review 
+- Hanya user yang sudah menyewa suatu properti yang dapat memberi review terhadap properti yang sudah selesai disewa.
+- Melakukan training untuk orang yang ingin menyewakan propertinya, agar pahan standar apa yang harus dipenuhi.
